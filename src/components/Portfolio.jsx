@@ -104,6 +104,40 @@ export default function Portfolio({ onOpenEnquiry: _onOpenEnquiry = () => {} }) 
       ],
       layout: 'image-right',
     },
+    {
+      id: 'ozone',
+      code: 'PROJECT 05',
+      title: 'OZONE – DHARWAD',
+      category: 'Restaurant & Bar',
+      tagline: 'A Taste of Vanashree Hotel • Dharwad',
+      route: '/demo/ozone',
+      image: `${import.meta.env.BASE_URL}portfolio/ozone.jpg`,
+      shortDesc: 'Warm, garden dining restaurant concept featuring categorized tandoori, Indo-Chinese and desserts menu, interactive spirits catalog, and 1-tap local contact.',
+      deliverables: [
+        'Curated Tandoori, Chinese & Desserts digital menu',
+        'Verified whisky & rum bar measures catalog',
+        'Direct 1-tap phone booking & Google Maps directions',
+        'Responsive gallery with accessible image lightbox',
+      ],
+      layout: 'image-left',
+    },
+    {
+      id: 'nova',
+      code: 'PROJECT 06',
+      title: 'NOVA — LUXURY 3D LOUNGE',
+      category: 'Bar · Restaurant · Nightlife',
+      tagline: 'Cinematic 3D Hospitality Concept • Mayfair',
+      route: '/demo/nova',
+      image: `${import.meta.env.BASE_URL}portfolio/nova.jpg`,
+      shortDesc: 'Award-winning dark luxury hospitality website with real-time 3D Three.js hero, wood-fired tasting menu, mixology showcase, and table reservation engine.',
+      deliverables: [
+        'Interactive Three.js 3D kinetic sculptural hero',
+        'Wood-fired gastronomy & signature cocktail tasting catalog',
+        'Interactive table booking modal with guest validation',
+        'Curated vinyl nightlife & acoustic residency programming',
+      ],
+      layout: 'image-right',
+    },
   ];
 
   return (

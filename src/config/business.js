@@ -64,6 +64,9 @@ export const BUSINESS_CONFIG = {
     ironcore: "Hi WebNest, I saw your IronCore Fitness website concept and I'd like to discuss a similar website for my business.",
     spiceAvenue: "Hi WebNest, I saw your Spice Avenue website concept and I'd like to discuss a similar website for my business.",
     urbanCuts: "Hi WebNest, I saw your Urban Cuts website concept and I'd like to discuss a similar website for my business.",
+    onlyFish: "Hi WebNest, I saw the Only Fish website concept and I'd like to discuss a similar website for my business.",
+    ozone: "Hi WebNest, I saw the Ozone website concept and would like to discuss a website for my business.",
+    nova: "Hi WebNest, I saw the NOVA luxury 3D bar & restaurant website concept and would like to discuss a website for my business.",
   }
 };
 

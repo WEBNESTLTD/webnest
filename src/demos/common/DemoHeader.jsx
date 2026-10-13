@@ -9,6 +9,8 @@ export default function DemoHeader({ currentDemo = 'ironcore' }) {
     { id: 'spice-avenue', name: 'Spice Avenue', route: '/demo/spice-avenue' },
     { id: 'urban-cuts', name: 'Urban Cuts', route: '/demo/urban-cuts' },
     { id: 'only-fish', name: 'Only Fish', route: '/demo/only-fish' },
+    { id: 'ozone', name: 'Ozone', route: '/demo/ozone' },
+    { id: 'nova', name: 'NOVA Lounge', route: '/demo/nova' },
   ];
 
   return (

@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/motion/PageTransition';
 import WebNestHome from './pages/WebNestHome';
-import IronCoreDemo from './demos/ironcore/IronCoreDemo';
-import SpiceAvenueDemo from './demos/spice-avenue/SpiceAvenueDemo';
-import UrbanCutsDemo from './demos/urban-cuts/UrbanCutsDemo';
-import OnlyFishDemo from './demos/only-fish/OnlyFishDemo';
+
+const IronCoreDemo = lazy(() => import('./demos/ironcore/IronCoreDemo'));
+const SpiceAvenueDemo = lazy(() => import('./demos/spice-avenue/SpiceAvenueDemo'));
+const UrbanCutsDemo = lazy(() => import('./demos/urban-cuts/UrbanCutsDemo'));
+const OnlyFishDemo = lazy(() => import('./demos/only-fish/OnlyFishDemo'));
+const OzoneDemo = lazy(() => import('./demos/ozone/OzoneDemo'));
+const NovaDemo = lazy(() => import('./demos/nova/NovaDemo'));
 
 // Centralized CSS & Design Tokens
 import './tokens.css';
@@ -31,54 +34,72 @@ function AnimatedRoutes() {
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        {/* WebNest Official Marketing Website */}
-        <Route
-          path="/"
-          element={
-            <PageTransition>
-              <WebNestHome />
-            </PageTransition>
-          }
-        />
+      <Suspense fallback={<div style={{ minHeight: '100vh', background: '#0B0B0A' }} />}>
+        <Routes location={location} key={location.pathname}>
+          {/* WebNest Official Marketing Website */}
+          <Route
+            path="/"
+            element={
+              <PageTransition>
+                <WebNestHome />
+              </PageTransition>
+            }
+          />
 
-        {/* Portfolio Live Demos (Locked Architecture - Clean Routes) */}
-        <Route
-          path="/demo/ironcore"
-          element={
-            <PageTransition>
-              <IronCoreDemo />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/demo/spice-avenue"
-          element={
-            <PageTransition>
-              <SpiceAvenueDemo />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/demo/urban-cuts"
-          element={
-            <PageTransition>
-              <UrbanCutsDemo />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/demo/only-fish"
-          element={
-            <PageTransition>
-              <OnlyFishDemo />
-            </PageTransition>
-          }
-        />
+          {/* Portfolio Live Demos (Locked Architecture - Clean Routes) */}
+          <Route
+            path="/demo/ironcore"
+            element={
+              <PageTransition>
+                <IronCoreDemo />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/demo/spice-avenue"
+            element={
+              <PageTransition>
+                <SpiceAvenueDemo />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/demo/urban-cuts"
+            element={
+              <PageTransition>
+                <UrbanCutsDemo />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/demo/only-fish"
+            element={
+              <PageTransition>
+                <OnlyFishDemo />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/demo/ozone"
+            element={
+              <PageTransition>
+                <OzoneDemo />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/demo/nova"
+            element={
+              <PageTransition>
+                <NovaDemo />
+              </PageTransition>
+            }
+          />
 
-        {/* Fallback to home */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+          {/* Fallback to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Suspense>
     </AnimatePresence>
   );
 }
